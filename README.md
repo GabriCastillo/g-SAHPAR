@@ -1,5 +1,6 @@
 # g-SAHPAR
-
-Gabriel Castillo juas juas
-
+Pedro José Nicolás Ankersmit Carrión
+Gabriel Castillo
+Fabrizio Cristallo Cagnoli
 Raúl Doblas Fernández
+
