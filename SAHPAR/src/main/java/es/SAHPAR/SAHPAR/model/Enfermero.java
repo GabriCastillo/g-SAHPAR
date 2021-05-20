@@ -1,2 +1,4 @@
-package es.SAHPAR.SAHPAR.model;public class Enfermero {
+package es.SAHPAR.SAHPAR.model;
+
+public class Enfermero {
 }
