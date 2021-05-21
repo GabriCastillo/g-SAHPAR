@@ -1,4 +1,4 @@
-package es.uma.ingsoftware.SAHPAR;
+package es.uma.ingsoftware;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
