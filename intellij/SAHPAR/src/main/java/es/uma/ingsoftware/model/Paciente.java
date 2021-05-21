@@ -2,9 +2,16 @@ package es.uma.ingsoftware.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Paciente {
+
+	@Id
+	@GeneratedValue
+	private int id;
+
 	private String nombre;
 	private String apellidos;
 	private String direccion;

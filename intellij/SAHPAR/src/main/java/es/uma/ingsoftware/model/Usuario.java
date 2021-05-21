@@ -1,11 +1,18 @@
 package es.uma.ingsoftware.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Usuario {
-
+@Table(name="Usuarios")
+public class Usuario implements Serializable {
+    @Id
+    @GeneratedValue
+    private int id;
     private String dni;
     private String username;
     private String passw;

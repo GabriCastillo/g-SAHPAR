@@ -1,12 +1,18 @@
 package es.uma.ingsoftware.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Sensor {
+
+	@Id
+	@GeneratedValue
+	private int id;
+
 	private double frecuencia;
 	private String habitacion;
-	private int id;
 	public double getFrecuencia() {
 		return frecuencia;
 	}
