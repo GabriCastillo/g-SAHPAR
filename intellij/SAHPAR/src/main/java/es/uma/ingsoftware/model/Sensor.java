@@ -1,5 +1,8 @@
 package es.uma.ingsoftware.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Sensor {
 	private double frecuencia;
 	private String habitacion;

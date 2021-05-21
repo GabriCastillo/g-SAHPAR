@@ -1,7 +1,9 @@
 package es.uma.ingsoftware.model;
 
 
+import javax.persistence.Entity;
 
+@Entity
 public class Paciente {
 	private String nombre;
 	private String apellidos;

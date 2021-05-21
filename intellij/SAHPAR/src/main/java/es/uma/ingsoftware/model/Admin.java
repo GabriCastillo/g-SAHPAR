@@ -1,5 +1,8 @@
 package es.uma.ingsoftware.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Admin extends Usuario{
 	public void añadirUsuario() {}
 	public void editarUsuario() {}
