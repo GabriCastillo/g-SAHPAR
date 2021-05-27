@@ -1,8 +1,11 @@
 package es.SAHPAR.SAHPAR.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Admin extends Usuario{
 	public Admin(String username, String passw, String foto, String dni, String nombre, String apellidos) {
-		super(username, passw, foto, dni, nombre, apellidos);
+		super(username, passw, foto, dni, nombre, apellidos,"Admin");
 		// TODO Auto-generated constructor stub
 	}
 	public void añadirUsuario() {}

@@ -1,20 +1,32 @@
 package es.SAHPAR.SAHPAR.model;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 
+@Entity
 public class Paciente {
+	@Id
 	private String nombre;
+	@Id
 	private String apellidos;
 	private String direccion;
 	private String seguridad_social;
 	private String datos_sanitarios;
+	private String color;
 	private double limite_rojo;
 	private double limite_amarillo;
 	private String tlfContc;
-	private Sensor sensor;
-	private Doctor doctor;
+	@OneToOne
+	Sensor sensor;
+	@ManyToMany
+	List<Usuario> usuario;
 	public Paciente(String nombre,String apellidos,String direccion,String seguridad_social,
-			String datos_sanitarios,double limite_rojo,double limite_amarillo,String tlfContc,Sensor sensor,Doctor doctor) {
+			String datos_sanitarios,double limite_rojo,double limite_amarillo,String tlfContc) {
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 		this.direccion=direccion;
@@ -23,8 +35,7 @@ public class Paciente {
 		this.limite_amarillo=limite_amarillo;
 		this.limite_rojo=limite_rojo;
 		this.tlfContc=tlfContc;
-		this.sensor=sensor;
-		this.doctor=doctor;
+		this.color="Verde";
 		while(true) {
 			comprobarPaciente();
 		}
@@ -32,11 +43,11 @@ public class Paciente {
 	public void comprobarPaciente() {
 		double frec = sensor.getFrecuencia();
 		if(frec>=limite_rojo) {
-			color("Rojo");
+			color="Rojo";
 		}else if(frec>=limite_amarillo&&frec<limite_rojo) {
-			color("Amarillo");
+			color="Amarillo";
 		}else {
-			color("Verde");
+			color="Verde";
 		}
 	}
 	public void color(String color) {}

@@ -1,11 +1,21 @@
 package es.SAHPAR.SAHPAR.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Sensor {
+	@Id
+	@GeneratedValue
+	private Integer id;
 	private double frecuencia;
 	private String habitacion;
-	private int id;
-	public Sensor(int id) {
-		this.id=id;
+	@OneToOne (mappedBy ="sensor")
+	Paciente ps;
+	public Sensor() {
+
 	}
 	public double getFrecuencia() {
 		return frecuencia;

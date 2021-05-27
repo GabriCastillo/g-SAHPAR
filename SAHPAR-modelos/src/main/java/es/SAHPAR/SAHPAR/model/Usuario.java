@@ -1,19 +1,38 @@
 package es.SAHPAR.SAHPAR.model;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public abstract class Usuario {
+	@Id
 	private String username;
 	private String passw;
 	private String foto;
 	private String dni;
 	private String nombre;
 	private String apellidos;
-	public Usuario(String username,String passw,String foto,String dni,String nombre,String apellidos) {
+	private String tipo;
+	
+	@OneToOne (mappedBy = "user")
+	Roles roles;
+	
+	@ManyToMany (mappedBy = "usuario")
+	List<Paciente> paciente;
+	
+	
+	public Usuario(String username,String passw,String foto,String dni,String nombre,String apellidos,String tipo) {
 		this.username=username;
 		this.passw=passw;
 		this.foto=foto;
 		this.dni=dni;
 		this.nombre=nombre;
 		this.apellidos=apellidos;
+		this.tipo=tipo;
 	}
 	public void editarFoto(String foto) {
 		this.foto=foto;
@@ -53,6 +72,9 @@ public abstract class Usuario {
 	}
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+	public String getTipo() {
+		return tipo;
 	}
 	
 }
