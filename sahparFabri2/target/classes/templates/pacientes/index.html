@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de pacientes</title>
+</head>
+<body>
+	<h1>Listado de pacientes</h1>
+	<a th:href="@{/pacientes/add}">Crear nuevo paciente</a>
+	<table>
+		<thead>
+			<tr><td>ID</td><td>Nombre</td><td>Apellidos</td><td></td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="p : ${listaPacientes}">
+				<td th:text="${p.id}"></td>
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.apellidos}"></td>
+				<td><a th:href="@{/pacientes/view/{id}(id=${p.id})}">Ver</a> <a th:href="@{/pacientes/edit/{id}(id=${p.id})}">Editar</a> <a th:href="@{/pacientes/delete/{id}(id=${p.id})}">Borrar</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

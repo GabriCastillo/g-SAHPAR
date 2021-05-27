@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de pacientes</title>
+</head>
+<body>
+	<div th:switch="${paciente.id}">
+		<h1 th:case="null">Nuevo Paciente</h1>
+		<h1 th:case="*">Editando paciente</h1>
+	</div>
+	<form th:action="@{/pacientes/save}" method="post" th:object="${paciente}">
+		<input type="hidden" id="id" th:field="*{id}">
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<br>
+		<div>
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}">
+		</div>
+		<br>
+		<div>
+			<label for="nacimiento">Fecha nacimiento</label>
+			<input type="date" id="nacimiento" th:field="*{nacimiento}">
+		</div>
+		<br>
+		<div>
+			<label for="limite_amarillo">Limite Amarillo</label>
+			<input type="text" id="limite_amarillo" th:field="*{limite_amarillo}">
+		</div>
+		<br>
+		<div>
+			<label for="limite_rojo">Limite Rojo</label>
+			<input type="text" id="limite_rojo" th:field="*{limite_rojo}">
+		</div>
+		<br>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>
