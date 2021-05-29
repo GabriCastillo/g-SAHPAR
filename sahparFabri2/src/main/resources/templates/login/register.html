@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registrar Usuario</title>
+</head>
+<body>
+	<h1>Nuevo Usuario</h1>
+	<form th:action="@{/login/save}" method="post" th:object="${usuario}">
+		<input type="hidden" id="dni" th:field="*{dni}">
+		<div>
+			<label for="dni">Usuario</label>
+			<input type="text" id="dni" th:field="*{dni}">
+		</div>
+		<br>
+		<div>
+			<label for="passw">Contraseña</label>
+			<input type="password" id="passw" th:field="*{passw}">
+		</div>
+		<br>
+		<div>
+			<input type="reset" value="Resetear valores">
+		</div>
+		<br>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>
