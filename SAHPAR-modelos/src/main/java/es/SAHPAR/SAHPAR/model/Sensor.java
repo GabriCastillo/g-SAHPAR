@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Sensor {
+public class Sensor extends Thread{
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -15,7 +15,7 @@ public class Sensor {
 	private boolean activado;
 	@OneToOne (mappedBy ="sensor")
 	Paciente ps;
-	public Sensor() {
+	public void run(){
 		activado=true;
 		int prob;
 		while(activado) {
@@ -26,6 +26,12 @@ public class Sensor {
 				frecuencia=Math.random()*(59-40+1)+40;
 			}else{
 				frecuencia=Math.random()*(100-60+1)+60;
+			}
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
