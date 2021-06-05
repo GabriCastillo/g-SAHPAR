@@ -27,6 +27,7 @@ public class Sensor extends Thread{
 			}else{
 				frecuencia=Math.random()*(100-60+1)+60;
 			}
+			ps.comprobarPaciente();
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {

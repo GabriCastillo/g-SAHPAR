@@ -11,8 +11,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class Paciente {
 	@Id
+	private String dni;
 	private String nombre;
-	@Id
 	private String apellidos;
 	private String direccion;
 	private String seguridad_social;
