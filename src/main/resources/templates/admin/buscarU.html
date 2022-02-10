@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de pacientes</title>
+	<link rel="stylesheet" th:href="@{/css/estilosBuscarP.css}" />
+</head>
+<body>
+
+          <h2>Buscar usuario por:</h2>
+
+          <nav>
+      	  <ul>
+           	 <li><a th:href="@{/admin/buscarUN}">
+    					<button>Nombre</button>
+						</a>
+					</li>  
+            <br>
+			<li><a th:href="@{/admin/buscarUA}">
+    					<button>Apellidos</button>
+						</a>
+					</li>   
+			<br>
+			<li><a th:href="@{/admin/buscarUDni}">
+    					<button>Dni</button>
+						</a>
+					</li> 
+			</li>
+			<br>
+		</ul>
+	</nav>
+
+		  <footer>WEB SAHPAR CC 2021
+			  <a th:href="@{/admin/}">
+				  <button>Volver</button>
+			  </a>
+		  </footer>
+
+  </body>
+</html>
+
+
+
+      

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Listado Usuarios</title>
+		<link rel="stylesheet" th:href="@{/css/estilosLista.css}"/>
+	</head>
+<body>
+	<h1> Espacio del Administrador</h1>
+	<h2> Listado de usuario</h2>
+	<br>
+	<h3><a th:href="@{/admin/addU}">
+	<script>
+		if(performance.navigation.type == 2){
+   			location.reload(true);
+		};
+	</script>
+    <button>Crear nuevo usuario</button>
+	</a></h3>
+	<br>
+	<table>
+		<thead>
+			<tr><td>Usuario (DNI)</td><td>Contraseña</td><td>Tipo</td><td></td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario : ${listaUsuarios}">
+				<td th:text="${usuario.dni}"></td>
+				<td th:text="${usuario.passw}"></td>
+				<td th:text="${usuario.type}"></td>
+				<td><a th:href="@{/admin/viewU/{id}(id=${usuario.dni})}">
+    				<button>Ver</button>
+				</a></td>
+				<td><a th:href="@{/admin/editU/{id}(id=${usuario.dni})}">
+    				<button>Editar</button>
+				</a></td>
+				<td><a th:href="@{/admin/deleteU/{id}(id=${usuario.dni})}">
+    				<button>Borrar</button>
+				</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<footer>WEB SAHPAR CC 2021
+		<a th:href="@{/admin/}">
+			<button>Volver</button>
+		</a>	</footer>
+</body>
+</html>

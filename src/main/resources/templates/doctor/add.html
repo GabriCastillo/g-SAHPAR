@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SAHPAR-Añadir paciente</title>
+		<link rel="stylesheet" th:href="@{/css/estilosAddP.css}"  />
+	</head>
+	<body>
+	<div th:switch="${paciente.seguridadSocial}">
+		<h1 th:case="null">Nuevo paciente</h1>
+		<h1 th:case="*">Editando paciente</h1>
+	</div>
+	<form th:action="@{/doctor/save}" method="post" th:object="${paciente}">
+	 	<input th:if="*{seguridadSocial}" type="hidden" id="seguridadSocial" th:field="*{seguridadSocial}">
+		<div>
+			<label for="seguridadSocial">Número seguridad social</label>
+			<input type="text" id="seguridadSocial" th:field="*{seguridadSocial}" th:disabled="*{seguridadSocial}">
+		</div>
+		<br>
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<br>
+		
+		<div>
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}">
+		</div>
+		<br>
+		
+		<div>
+			<label for="nacimiento">Fecha nacimiento</label>
+			<input type="date" id="nacimiento" th:field="*{nacimiento}">
+		</div>
+		<br>
+		
+		<div>
+			<label for="direccion">Dirección </label>
+			<input type="text" id="direccion" th:field="*{direccion}">
+		</div>
+		<br>
+		
+		<div>
+			<label for="tlfContact">Teléfono de contacto</label>
+			<input type="text" id="tlfContc" th:field="*{tlfContc}">
+		</div>
+		<br>
+		
+<!-- 		<div> -->
+<!-- 			<label for="estado">Estado paciente</label> -->
+<!-- 			<select id="estado" name="estado" th:field="*{estado}"> -->
+<!-- 			<option value="verde">Verde</option> -->
+<!-- 			<option value="amarillo">Amarillo</option> -->
+<!-- 			<option value="rojo">Rojo</option> -->
+<!-- 			<option value="negro">Negro</option> -->
+<!-- 			</select> -->
+<!-- 		</div> -->
+<!-- 		<br> -->
+		<div>
+			<label for="limiteAmarillo">Limite Amarillo</label>
+			<input type="text" id="limiteAmarillo" th:field="*{limiteAmarillo}">
+		</div>
+		<br>
+		<div>
+			<label for="limiteRojo">Limite Rojo</label>
+			<input type="text" id="limiteRojo" th:field="*{limiteRojo}">
+		</div>
+		<br>
+		<div>
+			<label for="doctor">Doctor asignado</label>
+			<input type="text" id="doctor" th:field="*{doctor}">
+		</div>
+		<br>
+		<div>
+			<label for="habitacion">Habitacion</label>
+			<input type="text" id="habitacion" th:field="*{habitacion}">
+		</div>
+		<br>
+		
+		<div>
+			<label for="datosSanitarios">Datos sanitarios</label>
+			<textarea id="datosSanitarios" th:field="*{datosSanitarios}"></textarea>
+		</div>
+		<br>
+
+		<div><footer> SAHPAR WEB CC 2021
+			<input type="submit" value="Enviar">
+			</footer>
+		</div>
+	</form>
+</body>
+</html>

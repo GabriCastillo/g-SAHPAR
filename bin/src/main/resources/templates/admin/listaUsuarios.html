@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Listado Usuarios</title>
+	</head>
+	<body><h1> Espacio del Administrador</h1>
+	<h2> Listado de Usuarios</h2>
+	<table>
+		<thead>
+			<tr><td>Nombre Usuario </td><td> Password </td></tr>
+		</thead>
+		<tbody>
+			<tr th:each ="p : ${listaUsuarios}" >
+				<td th:text= "${p.nombreUsuario}"> </td>
+				<td th:text= "${p.password}"> </td>
+			
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

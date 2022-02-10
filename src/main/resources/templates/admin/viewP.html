@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de pacientes</title>
+	<link rel="stylesheet" th:href="@{/css/estilosView.css}"/>
+</head>
+<body>
+	<h1>Listado de pacientes</h1>
+
+	<cover1>
+		<cover2></cover2>
+	
+	
+	<div>
+		<label for="nombre">Nombre:</label>
+		<span th:text="${paciente.nombre}"></span>
+	</div>
+	<div>
+		<label for="apellidos">Apellidos:</label>
+		<span th:text="${paciente.apellidos}"></span>
+	</div>
+	<div>
+		<label for="seguridadSocial">Número de la seguridad social:</label>
+		<span th:text="${paciente.seguridadSocial}"></span>
+		
+	</div>
+	<br>
+	<div>
+		<label for="doctor">Doctor asignado:</label>
+		<span th:text="${paciente.doctor}"></span>
+
+	</div>
+	<div>
+		<label for="habitacion">Habitacion:</label>
+		<span th:text="${paciente.habitacion}"></span>
+
+	</div>
+	<div>
+		<label for="datosSanitarios">Datos sanitarios:</label>
+		<span th:text="${paciente.datosSanitarios}"></span>
+
+	</div>
+	<br>
+	<div>
+		<label for="direccion">Dirección:</label>
+		<span th:text="${paciente.direccion}"></span>
+	</div>	
+	<div>
+		<label for="tlfContc">Teléfono de contacto:</label>
+		<span th:text="${paciente.tlfContc}"></span>
+	</div>
+	</cover1>
+	<footer>
+		SAHPAR WEB CC 2021
+		<a th:href="@{/admin/}">
+			<button>Volver</button>
+		</a></footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SAHPAR</title>
+		<link rel="stylesheet" th:href="@{/css/estilosIndex.css}" />
+	</head>
+	<body> 
+		<h1> Espacio del Enfermero</h1>
+		<h2> Selecciona una acción:</h2>
+		<nav>
+      	  <ul>
+             <li><a th:href="@{/enfermero/add}">
+    				<button>Añadir Paciente</button>
+				</a>
+			</li>
+		  <br>
+		    <li><a th:href="@{/enfermero/buscar}">
+    				<button>Buscar paciente</button>
+				</a>
+			</li>
+		  <br>
+			<li><a th:href="@{/enfermero/lista}">
+    				<button>Listado Pacientes</button>
+				</a>
+			</li>
+		  <br>
+       	 </ul>
+		</nav>
+		<div><footer>WEB SAHPAR CC 2021
+			<a th:href="@{/}">
+				<button>Cerrar sesión</button>
+			</a></footer>
+
+		</div>
+	</body>
+</html>

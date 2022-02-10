@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 									EN DESUSO 						-->
+<title>Pantalla Login</title>
+	<link rel="stylesheet" th:href="@{/css/estilosIndex}"/>
+</head>
+<body>
+	<h1>Iniciar Sesión</h1>
+	<h2><a th:href="@{/login/register}">
+    <button>Crear nuevo usuario</button>
+	</a></h2>
+	<table>
+		<thead>
+			<tr><td>Usuario (ID)</td><td>Contraseña</td><td>Tipo</td></tr>
+		</thead>
+		<tbody>
+			<tr th:each="u : ${listaUsuarios}">
+				<td th:text="${u.dni}"></td>
+				<td th:text="${u.passw}"></td>
+				<td th:text="${u.type}"></td>
+				<td><a th:href="@{/login/view/{dni}(dni=${u.dni})}">
+    				<button>Ver</button>
+				</a></td>
+				<td><a th:href="@{/login/delete/{dni}(dni=${u.dni})}">
+    				<button>Eliminar</button>
+				</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a th:href="@{/}">
+    		<button>(Temporal)</button>
+		</a>
+	
+</body>
+</html>

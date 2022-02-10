@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de pacientes</title>
+    <link rel="stylesheet" th:href="@{/css/estilosBuscarPA.css}"/>
+</head>
+<body>
+
+          <h3>Buscar usuario por nombre</h3>
+          <div>
+          	<a th:href="@{/admin/addU}">
+    			<button>Añadir un nuevo usuario</button>
+   			</a>
+    		<a th:href="@{/admin/buscarU}">
+			<script>
+				if(performance.navigation.type == 2){
+		   			location.reload(true);
+				};
+			</script>
+    		<button>Volver</button>
+   			</a>
+   			</div>
+   			<br>
+
+          <form th:action="@{/admin/buscaarUN}" th:object="${usuario}" method="get">
+			<div>
+			<input type="text" id="nombre" th:field="*{nombre}">
+            <button type="submit">Buscar</button>
+          	</div>
+          	<br>
+          </form>
+
+          <table>
+            <thread>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>DNI</th>
+              </tr>
+
+            </thread>
+
+            <tbody>
+              <tr th:each="usuario : ${usuarioPorNombre}">
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.apellidos}"></td>
+                <td th:text="${usuario.dni}"></td>
+								<td><a th:href="@{/admin/viewU/{id}(id=${usuario.dni})}">
+				    				<button>Ver</button>
+								</a></td>
+								<td><a th:href="@{/admin/editU/{id}(id=${usuario.dni})}">
+				    				<button>Editar</button>
+								</a></td>
+								<td><a th:href="@{/admin/deleteU/{id}(id=${usuario.dni})}">
+				    				<button>Borrar</button>
+								</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+    <footer>WEB SAHPAR CC 2021</footer>
+  </body>
+</html>

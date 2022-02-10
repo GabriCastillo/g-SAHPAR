@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de pacientes</title>
+    <link rel="stylesheet" th:href="@{/css/estilosBuscarPA.css}"/>
+</head>
+<body>
+
+          <h3>Buscar paciente por nombre</h3>
+          <div><a th:href="@{/admin/addP}">
+	    	<button>Añadir un nuevo paciente</button>
+	    	</a>
+	    	<a th:href="@{/admin/buscarP}">
+				<script>
+					if(performance.navigation.type == 2){
+			   			location.reload(true);
+					};
+				</script>
+	    	<button>Volver</button>
+	    	</a>
+	    	</div><br>
+
+          <form th:action="@{/admin/buscaarPN}" th:object="${paciente}" method="get">
+			<div><input type="text" id="nombre" th:field="*{nombre}">
+            <button type="submit">Buscar</button></div>
+            <br>
+          </form>
+
+          <table>
+            <thread>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Número seguridad social</th>
+                <th>Teléfono contacto</th>
+              </tr>
+
+            </thread>
+
+            <tbody>
+              <tr th:each="paciente : ${pacientePorNombre}">
+                <td th:text="${paciente.nombre}"></td>
+                <td th:text="${paciente.apellidos}"></td>
+                <td th:text="${paciente.seguridadSocial}"></td>
+                <td th:text="${paciente.tlfContc}"></td>
+								<td>
+									<a th:href="@{/admin/viewP/{id}(id=${paciente.seguridadSocial})}">
+				    					<button>Ver</button>
+									</a>
+									<a th:href="@{/admin/editP/{id}(id=${paciente.seguridadSocial})}">
+				    					<button>Editar</button>
+									</a>
+									<a th:href="@{/admin/deleteP/{id}(id=${paciente.seguridadSocial})}">
+				    					<button>Borrar</button>
+									</a>
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+    <footer>WEB SAHPAR CC 2021
+    </footer>
+  </body>
+</html>

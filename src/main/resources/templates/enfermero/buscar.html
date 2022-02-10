@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de pacientes</title>
+	<link rel="stylesheet" th:href="@{/css/estilosBuscarP.css}" />
+</head>
+<body>
+          <h2>Buscar paciente por:</h2>
+
+          <nav>
+      	  <ul>
+      	  	<li><a th:href="@{/enfermero/buscarN}">
+    			<button>Nombre</button>
+				</a>
+			</li>
+            <br>
+            <li><a th:href="@{/enfermero/buscarA}">
+    			<button>Apellidos</button>
+				</a>
+			</li>
+			<br>
+			<li><a th:href="@{/enfermero/buscarSS}">
+    			<button>Número de la seguridad social</button>
+				</a>
+			</li>
+			<br>
+		</ul>
+	</nav>
+
+		  <footer> SAHPAR WEB CC 2021
+			  <input type="submit" value="Enviar">
+			  <a th:href="@{/enfermero/}">
+				  <button>Volver</button>
+			  </a></footer>
+
+  </body>
+</html>
+
+
+
+      

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pantalla Login</title>
+	</head>
+	<style>
+		*, *:before, *:after {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		body{
+			background:lightblue;
+			font-family:Trebuchet MS;
+			font-size:large;
+		}
+		h1{
+			background: blue;
+			height: 10%;
+			width: 100%;
+			color: white;
+			float: left;
+			height: 10%;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-bottom-style: solid;
+			border-width: 20px;
+			border-color:white;
+		}
+		button {
+			font-size: 20px;
+			margin-left:30px;
+		}
+		footer{
+			padding: 15px;
+		}
+	</style>
+	<body>
+		<center>
+        <h1>SAHPAR</h1></center>
+
+        <center>
+        <img alt="logo SAHPAR" src="https://media.discordapp.net/attachments/845586549123055646/851204670516625408/SAHPAR_LOGO.png?width=350&height=350">
+        
+        <br>
+        <a th:href="@{/login/sesion}">
+            <button>Iniciar Sesión</button>
+        </a>
+        <footer> SAHPAR WEB CC 2021
+
+        </footer>
+        </center>
+	</body>
+</html>

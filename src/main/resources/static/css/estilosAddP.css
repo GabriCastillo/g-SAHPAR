@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+	background: lightblue;
+	font-family: Trebuchet MS;
+	font-size: 20px;
+
+}
+h1{
+	background: blue;
+	height: 10%;
+	width: 100%;
+	color: white;
+	float: left;
+	height: 10%;
+	padding: 15px;
+	margin-bottom: 10px;
+	border-bottom-style: solid;
+	border-width: 20px;
+	border-color:white;
+}
+form{
+
+	background: aquamarine;
+	width: 100%;
+}
+label{
+	margin-left:30px;
+}
+label input{
+	margin-top:50px;
+
+}
+
+button {
+	font-size: 20px;
+}
+input {
+	font-size: 20px;
+}
+select{
+	font-size: 20px;
+}
+footer{
+	padding-left:15px;
+	float:left;
+	top:160px;
+	font-size:large;
+	color: black;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SAHPAR</title>
+		<link rel="stylesheet"  th:href="@{/css/estilosIndex.css}" />
+	</head>
+	<body> 
+		<h1> Espacio del doctor</h1>
+		<h2> Selecciona una acción:</h2>
+		<nav>
+      	  <ul>
+             <li><a th:href="@{/doctor/add}">
+    				<button>Añadir Paciente</button>
+				</a>
+			</li>
+          
+		  <br>
+		    <li><a th:href="@{/doctor/buscar}">
+    				<button>Buscar Paciente</button>
+				</a>
+			</li>
+          
+		  <br>
+		  	<li><a th:href="@{/doctor/lista}">
+    				<button>Listado Pacientes</button>
+				</a>
+			</li>
+		  <br>
+		  
+       	 </ul>
+		</nav>
+		<div><footer> WEB SAHPAR CC 2021
+			<a th:href="@{/}">
+				<button>Cerrar sesión</button>
+			</a></footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SAHPAR-Añadir usuario</title>
+		<link rel="stylesheet" th:href="@{/css/estilosAddP.css}" />
+	</head>
+	<body>
+	<div th:switch="${usuario.dni}">
+		<h1 th:case="null">Nuevo Usuario</h1>
+		<h1 th:case="*">Editando Usuario</h1>
+	</div>
+	<form th:action="@{/admin/saveU}" method="post" th:object="${usuario}">
+		<input th:if="*{dni}" type="hidden" id="id" th:field="*{dni}">
+		<div>
+			<label for="dni">Usuario</label>
+			 <input type="text" id="dni" th:field="*{dni}" th:disabled="*{dni}" >
+		</div>
+		<br>
+		<div>
+			<label for="passw">Contraseña</label>
+			<input type="password" id="passw" th:field="*{passw}">
+		</div>
+		<br>
+		<div>
+			<label for="type">Tipo de Usuario</label>
+			<select id="type" name="type" th:field="*{type}">
+			<option value="admin">Admin</option>
+			<option value="doctor">Doctor</option>
+			<option value="enfermero">Enfermero</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<label for="nombre">Nombre</label>
+			<input type="text" id="nombre" th:field="*{nombre}">
+		</div>
+		<br>
+		<div>
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id="apellidos" th:field="*{apellidos}">
+		</div>
+		
+		<br>
+		<div><footer> SAHPAR WEB CC 2021
+			<input type="submit" value="Enviar">
+			</footer>
+		</div>
+	</form>
+	
+</body>
+</html>

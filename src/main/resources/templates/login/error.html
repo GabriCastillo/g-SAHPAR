@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Iniciar Sesión</title>
+</head>
+<style>
+	*, *:before, *:after {
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	body{
+		background:lightblue;
+		font-family: Trebuchet MS
+	}
+	h1{
+		background: blue;
+		height: 10%;
+		width: 100%;
+		color: white;
+		float: left;
+		height: 10%;
+		padding: 15px;
+		margin-bottom: 10px;
+		border-bottom-style: solid;
+		border-width: 20px;
+		border-color:white;
+	}
+	input{
+		font-family: Trebuchet MS;
+		font-size: large;
+		background: aquamarine;
+		border-style: solid;
+		border-color: aquamarine;
+		border-width: 10px;
+	}
+	footer{
+		padding: 15px;
+	}
+</style>
+<body>
+	<h1>Error al Iniciar Sesión</h1>
+	
+	<form th:action="@{/login/sesion}" method="post">
+ 		<input type="submit" value="Volver a introducir datos">
+	</form>
+	<footer> SAHPAR WEB CC 2021
+
+	</footer>
+</body>
+</html>

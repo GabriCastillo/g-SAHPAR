@@ -1,0 +1,51 @@
+@CHARSET "ISO-8859-1";
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+	background: lightblue;
+	font-family: Trebuchet MS;
+}
+h1{
+	background: blue;
+	width: 100%;
+	padding: 15px;
+	color: white;
+	border-bottom-style: solid;
+	border-width: 20px;
+	border-color:white;
+}
+h2{
+	padding-left: 15px;
+	background: aquamarine;
+	width: 100%;
+
+}
+button{
+	font-family: Trebuchet MS;
+	font-size: large;
+	color: black;
+	margin-left:30px;
+}
+table{
+	z-index: 1;
+	position:relative;
+	top:70;
+	margin-left: 30px;
+}
+table, th, td{
+	
+	background: white;
+	 border: 1px solid black;
+}
+footer{
+	padding-left:15px;
+	float:left;
+	top:160px;
+	font-size:large;
+	color: black;
+}

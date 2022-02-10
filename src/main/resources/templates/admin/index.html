@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SAHPAR</title>
+		<link rel="stylesheet" th:href="@{/css/estilosIndex.css}" />
+	</head>
+	<body> 
+		<h1> Espacio del Administrador</h1>
+		<h2> Selecciona una acción:</h2>
+		
+		<nav>
+      	  <ul>
+			<li>Añadir
+				<ul>
+				<br>
+					<li><a th:href="@{/admin/addU}">
+    					<button>Usuario</button>
+						</a>
+					</li>
+				<br>
+					<li><a th:href="@{/admin/addP}">
+    					<button>Paciente</button>
+						</a>
+					</li>
+                </ul>
+			</li>
+			<br>
+			<li>Buscar
+				<ul>
+				<br>
+					<li><a th:href="@{/admin/buscarU}">
+    					<button>Usuario</button>
+						</a>
+					</li>
+				<br>
+					<li><a th:href="@{/admin/buscarP}">
+    					<button>Paciente</button>
+						</a>
+					</li>
+                </ul>
+			</li>
+			<br>
+			<li>Listado
+				<ul>
+				<br>
+					<li><a th:href="@{/admin/listaU}">
+    					<button>Usuarios</button>
+						</a>
+					</li>
+				<br>
+					<li><a th:href="@{/admin/listaP}">
+    					<button>Pacientes</button>
+						</a>
+					</li>
+                </ul>
+			</li>
+			<br>
+		</ul>
+		</nav>
+		<div>
+			<footer> WEB SAHPAR CC 2021
+				<a th:href="@{/}">
+					<button>Cerrar sesión</button>
+				</a>
+
+				</a></footer>
+		</div>
+	</body>
+</html>

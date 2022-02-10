@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<!-- 									EN DESUSO 						-->
+	<title>Listado de usuarios</title>
+	<link rel="stylesheet" th:href="@{/css/estilosView.css}"/>
+</head>
+<body>
+<h1>Listado de usuario</h1>
+
+
+<div>
+	<label for="nombre">Nombre</label>
+	<span th:text="${usuario.nombre}"></span>
+</div>
+<div>
+	<label for="apellidos">Apellidos</label>
+	<span th:text="${usuario.apellidos}"></span>
+</div>
+<div>
+	<label for="dni">DNI</label>
+	<span th:text="${usuario.dni}"></span>
+
+</div>
+<footer> SAHPAR WEB &copy 2021
+
+	</a></footer>
+</body>
+</html>
